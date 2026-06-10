@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestlessQuil — Independent Lifestyle Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="home-hero-band">
+      <div class="container hero-home animate-in">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Independent lifestyle blog</p>
+          <h1>I test things. Then I tell you honestly whether they're worth your money.</h1>
+          <p class="hero-lead">Unfiltered takes on fashion, food, tech, and everyday life — from someone who actually tries things first.</p>
+          <div class="hero-actions">
+            <a href="blog.html" class="btn btn-primary">Start Reading</a>
+            <a href="products.html" class="btn btn-outline">Product Reviews</a>
+          </div>
+        </div>
+        <div class="hero-grid" aria-hidden="true">
+          <img src="images/coffee-morning.jpg" alt="" class="img-short" width="400" height="200" loading="lazy">
+          <img src="images/wardrobe.jpg" alt="" class="img-tall" width="400" height="320" loading="lazy">
+          <img src="images/phone-apps.jpg" alt="" class="img-short" width="400" height="200" loading="lazy">
+          <img src="images/journal-books.jpg" alt="" class="img-mid" width="400" height="240" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="home-content-band">
+      <div class="container home-shell">
+        <div class="feed-section-head animate-in">
+          <h2>Latest Stories</h2>
+          <a href="blog.html" class="feed-view-all">View all articles →</a>
+        </div>
+        <div class="main-layout">
+          <div class="main-content">
+            <div id="article-feed"></div>
+          </div>
+          <div id="sidebar-placeholder"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <h2 class="animate-in">Things I Actually Use</h2>
+        <div class="products-masonry" id="featured-products"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

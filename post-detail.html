@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — RestlessQuil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="blog">
+  <div id="header-placeholder"></div>
+
+  <main class="post-page">
+    <div class="container post-shell">
+      <div class="post-layout">
+        <div class="post-main">
+          <article class="post-article">
+            <header class="post-header animate-in" id="post-header-content"></header>
+
+            <figure class="post-hero-wrap animate-in">
+              <img id="post-hero-img" class="post-hero-image" src="" alt="" width="900" height="506" loading="lazy">
+            </figure>
+
+            <div class="article-body animate-in" id="post-content"></div>
+          </article>
+
+          <section class="post-recommendations animate-in">
+            <h3>Products Mentioned in This Article</h3>
+            <div class="rec-cards" id="post-recommendations"></div>
+          </section>
+
+          <nav class="post-nav" aria-label="Article navigation">
+            <a href="#" id="nav-prev"></a>
+            <a href="#" id="nav-next"></a>
+          </nav>
+        </div>
+
+        <aside class="post-sidebar" id="post-sidebar" aria-label="Article sidebar"></aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

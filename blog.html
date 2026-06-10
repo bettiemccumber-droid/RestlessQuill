@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — RestlessQuil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="blog">
+  <div id="header-placeholder"></div>
+
+  <main class="container" style="padding-top:2rem;">
+    <div class="blog-controls animate-in">
+      <div class="blog-search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" id="blog-search" placeholder="Search articles..." aria-label="Search articles">
+      </div>
+      <div class="category-tabs">
+        <button class="category-tab active" data-category="all">All</button>
+        <button class="category-tab" data-category="fashion">Fashion</button>
+        <button class="category-tab" data-category="trends">Trends</button>
+        <button class="category-tab" data-category="food">Food</button>
+        <button class="category-tab" data-category="lifestyle">Lifestyle</button>
+        <button class="category-tab" data-category="tech">Tech</button>
+        <button class="category-tab" data-category="reviews">Reviews</button>
+        <button class="category-tab" data-category="product-recs">Product Recs</button>
+        <button class="category-tab" data-category="platform-guides">Platform Guides</button>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid"></div>
+
+    <nav class="pagination" aria-label="Pagination">
+      <a href="#" aria-label="Previous page">←</a>
+      <span class="active">1</span>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#" aria-label="Next page">→</a>
+    </nav>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,982 @@
+/**
+ * RestlessQuil — Global scripts & shared data
+ */
+
+/** Local image assets (sourced from Unsplash, bundled for reliability) */
+const IMG = {
+  smartWatch: 'images/smart-watch.jpg',
+  wardrobe: 'images/wardrobe.jpg',
+  espresso: 'images/espresso.jpg',
+  plannerDesk: 'images/planner-desk.jpg',
+  phoneApps: 'images/phone-apps.jpg',
+  riceFood: 'images/rice-food.jpg',
+  journalBooks: 'images/journal-books.jpg',
+  fashionNeutral: 'images/fashion-neutral.jpg',
+  standingDesk: 'images/standing-desk.jpg',
+  writingDesk: 'images/writing-desk.jpg',
+  handHealth: 'images/hand-health.jpg',
+  chargingDock: 'images/charging-dock.jpg',
+  kitchenCooking: 'images/kitchen-cooking.jpg',
+  streetStyle: 'images/street-style.jpg',
+  coffeeCup: 'images/coffee-cup.jpg',
+  morningKitchen: 'images/morning-kitchen.jpg',
+  coffeeMorning: 'images/coffee-morning.jpg',
+  aboutTeam: 'images/about-team.jpg',
+  authorAvatar: 'images/author-avatar.jpg'
+};
+
+/**
+ * Builds post detail URL — hash survives serve clean-URL redirects
+ * @param {number} id
+ * @returns {string}
+ */
+function getPostUrl(id) {
+  return `post-detail.html?id=${id}#${id}`;
+}
+
+/**
+ * Reads article id from URL hash or query string
+ * @returns {number}
+ */
+function getPostIdFromUrl() {
+  const hashId = parseInt(window.location.hash.replace(/^#/, ''), 10);
+  if (hashId >= 1) return hashId;
+
+  const queryId = parseInt(new URLSearchParams(window.location.search).get('id'), 10);
+  if (queryId >= 1) return queryId;
+
+  return 1;
+}
+
+/** @type {Array<Object>} Article metadata (newest → oldest) */
+const ARTICLES = [
+  {
+    id: 1,
+    date: '2026-02-14',
+    category: 'tech',
+    categoryLabel: 'Tech / Review',
+    title: 'I Wore a Smart Ring for 6 Months — Here\'s Why I\'m Not Going Back to a Watch',
+    image: IMG.smartWatch,
+    excerpt: 'I genuinely thought smart rings were a gimmick until I wore one for half a year. My Apple Watch now sits in a drawer collecting dust, and I\'m not even mad about the $299 I spent. The sleep tracking alone changed how I structure my mornings — though I still hate the charging dock design.',
+    slug: 'smart-ring-review'
+  },
+  {
+    id: 2,
+    date: '2025-12-28',
+    category: 'trends',
+    categoryLabel: 'Fashion / Trends',
+    title: 'The Slow Death of Fast Fashion: Why I\'m Buying Only 10 Pieces This Year',
+    image: IMG.wardrobe,
+    excerpt: 'Fast fashion lost its grip on me after I counted 47 unworn items in my closet. This year I\'m limiting myself to ten deliberate purchases, and honestly it feels liberating rather than restrictive. My wallet agrees, even if my impulse-buying brain is still adjusting.',
+    slug: 'slow-death-fast-fashion'
+  },
+  {
+    id: 3,
+    date: '2025-11-19',
+    category: 'food',
+    categoryLabel: 'Food / Lifestyle',
+    title: 'Honestly, This $500 Espresso Machine Saved My Sanity',
+    image: IMG.espresso,
+    excerpt: 'I used to spend $6 a day at the café downstairs until I did the math and felt physically ill. The Breville Barista Express wasn\'t cheap, but my morning ritual is now the one part of my day I actually look forward to. The latte art is still terrible, but the coffee is perfect.',
+    slug: 'espresso-machine-sanity'
+  },
+  {
+    id: 4,
+    date: '2025-10-05',
+    category: 'lifestyle',
+    categoryLabel: 'Lifestyle',
+    title: 'I Tracked Every Hour of My Day for 30 Days. Here\'s What Disgusted Me.',
+    image: IMG.plannerDesk,
+    excerpt: 'Thirty days of logging every hour revealed I spend nearly four hours daily on mindless scrolling. I wasn\'t shocked — I was embarrassed. The data was ugly, but seeing it written down forced me to confront habits I\'d been politely ignoring for years.',
+    slug: 'tracked-every-hour'
+  },
+  {
+    id: 5,
+    date: '2025-09-12',
+    category: 'platform-guides',
+    categoryLabel: 'Tech / Platform Guide',
+    title: 'The Only 3 Apps I Actually Paid For This Year (And Why)',
+    image: IMG.phoneApps,
+    excerpt: 'I deleted 23 subscription apps and kept only three. Not because I\'m frugal — I\'m actually terrible with money — but because most productivity apps solve problems I don\'t have. These three earned their monthly fees by actually changing my workflow.',
+    slug: 'three-paid-apps'
+  },
+  {
+    id: 6,
+    date: '2025-08-01',
+    category: 'food',
+    categoryLabel: 'Food',
+    title: 'A Weekend in Kyoto Taught Me That I\'ve Been Cooking Rice Wrong My Entire Life',
+    image: IMG.riceFood,
+    excerpt: 'A ryokan owner in Kyoto watched me rinse rice once and politely took the bowl from my hands. What she showed me in five minutes demolished everything I thought I knew about cooking rice. I\'ve been doing it wrong since college, and the difference is embarrassingly obvious.',
+    slug: 'kyoto-rice-wrong'
+  },
+  {
+    id: 7,
+    date: '2025-07-17',
+    category: 'product-recs',
+    categoryLabel: 'Product Recs',
+    title: '5 Things Under $50 That I Recommend to Everyone Who Asks',
+    image: IMG.journalBooks,
+    excerpt: 'People ask me for recommendations constantly, and I always point them to these five items first. None are flashy, but each one solved a specific annoyance in my daily life. The Muji notebook alone has outlasted every fancy planner I\'ve ever bought.',
+    slug: 'five-things-under-50'
+  },
+  {
+    id: 8,
+    date: '2025-05-30',
+    category: 'fashion',
+    categoryLabel: 'Fashion',
+    title: 'I Stopped Buying Trending Colors. Here\'s What I Wear Instead.',
+    image: IMG.fashionNeutral,
+    excerpt: 'Trending colors always look incredible on influencers and terrible on me in real lighting. I switched to a neutral palette — cream, olive, charcoal, rust — and my wardrobe finally feels cohesive. I miss wearing bright pink sometimes, but I look put-together more often now.',
+    slug: 'stopped-trending-colors'
+  },
+  {
+    id: 9,
+    date: '2025-04-08',
+    category: 'reviews',
+    categoryLabel: 'Reviews',
+    title: 'I Tried 4 Standing Desk Converters. Only One Didn\'t End Up on Marketplace.',
+    image: IMG.standingDesk,
+    excerpt: 'Four standing desk converters, four different disappointments — except one. Three ended up listed on Marketplace within a month because they wobbled, scratched my desk, or required a PhD to adjust. The winner surprised me because it wasn\'t the most expensive option.',
+    slug: 'standing-desk-converters'
+  },
+  {
+    id: 10,
+    date: '2025-02-22',
+    category: 'tech',
+    categoryLabel: 'Tech',
+    title: 'Why I Deleted Every Productivity App and Started Using Paper',
+    image: IMG.writingDesk,
+    excerpt: 'I had twelve productivity apps and completed zero tasks consistently. Deleting them all felt reckless, but switching to a single paper notebook was the most productive decision I\'ve made in years. My phone battery lasts longer too, which is a bonus I didn\'t expect.',
+    slug: 'deleted-productivity-apps'
+  }
+];
+
+/** @type {Array<Object>} Featured products for homepage widget */
+const FEATURED_PRODUCTS = [
+  {
+    name: 'Oura Ring Gen 3',
+    image: IMG.smartWatch,
+    verdict: 'The only wearable I actually wear daily.',
+    stars: 4,
+    url: '#'
+  },
+  {
+    name: 'Breville Barista Express',
+    image: IMG.espresso,
+    verdict: 'Worth every penny if you drink coffee daily.',
+    stars: 5,
+    url: '#'
+  },
+  {
+    name: 'Fully Jarvis Converter',
+    image: IMG.standingDesk,
+    verdict: 'Stable, quiet, and didn\'t wobble once.',
+    stars: 4,
+    url: '#'
+  }
+];
+
+/** @type {Array<Object>} Full product reviews for products page */
+const PRODUCT_REVIEWS = [
+  {
+    brand: 'Oura',
+    model: 'Ring Gen 3 — Horizon',
+    image: IMG.smartWatch,
+    verdict: 'Six months in, I genuinely forget I\'m wearing it — which is exactly what I wanted from a health tracker.',
+    pros: ['Incredible sleep data', 'Battery lasts 5–7 days'],
+    cons: ['Subscription required for full features', 'Sizing kit is annoying'],
+    stars: 4,
+    score: 8.4,
+    url: '#'
+  },
+  {
+    brand: 'Breville',
+    model: 'Barista Express BES870',
+    image: IMG.espresso,
+    verdict: 'The machine that made me stop going to cafés — and I don\'t regret the $500 at all.',
+    pros: ['Consistent espresso shots', 'Built-in grinder saves counter space'],
+    cons: ['Learning curve on milk frothing', 'Needs regular cleaning'],
+    stars: 5,
+    score: 9.2,
+    url: '#'
+  },
+  {
+    brand: 'Fully',
+    model: 'Jarvis Standing Desk Converter',
+    image: IMG.standingDesk,
+    verdict: 'After three failed converters, this one actually stayed on my desk.',
+    pros: ['Rock-solid stability', 'Smooth height adjustment'],
+    cons: ['Heavy to move', 'Premium price point'],
+    stars: 4,
+    score: 8.7,
+    url: '#'
+  },
+  {
+    brand: 'Muji',
+    model: 'Recycled Paper Notebook A5',
+    image: IMG.journalBooks,
+    verdict: 'Twelve dollars for a notebook sounds absurd until you use one for a year.',
+    pros: ['Paper feels incredible', 'Lays flat when open'],
+    cons: ['No hardcover option in A5', 'Pages aren\'t numbered'],
+    stars: 5,
+    score: 9.0,
+    url: '#'
+  }
+];
+
+/**
+ * Maps category slug to badge CSS class
+ * @param {string} category
+ * @returns {string}
+ */
+function getBadgeClass(category) {
+  const map = {
+    fashion: 'badge-fashion',
+    trends: 'badge-trends',
+    food: 'badge-food',
+    lifestyle: 'badge-lifestyle',
+    tech: 'badge-tech',
+    reviews: 'badge-reviews',
+    'product-recs': 'badge-product-recs',
+    'platform-guides': 'badge-platform-guides'
+  };
+  return map[category] || 'badge-lifestyle';
+}
+
+/**
+ * Generates star string from count
+ * @param {number} count
+ * @returns {string}
+ */
+function renderStars(count) {
+  return '★'.repeat(count) + '☆'.repeat(5 - count);
+}
+
+/**
+ * Loads HTML component via fetch into target element
+ * @param {string} componentPath
+ * @param {string} targetId
+ * @returns {Promise<void>}
+ */
+async function loadComponent(componentPath, targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+  try {
+    const response = await fetch(componentPath);
+    if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
+    target.innerHTML = await response.text();
+  } catch (err) {
+    console.error('Component load error:', err);
+  }
+}
+
+/**
+ * Initializes sticky header nav toggle and active page highlight
+ */
+function initNavigation() {
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('nav-main');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
+
+  const page = document.body.dataset.page;
+  if (page) {
+    document.querySelectorAll('.nav-main a[data-page]').forEach((link) => {
+      if (link.dataset.page === page) link.classList.add('active');
+    });
+  }
+}
+
+/**
+ * Back-to-top button — appears after 400px scroll
+ */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/**
+ * Staggered page-load animation for cards and sections
+ */
+function initAnimations() {
+  const elements = document.querySelectorAll('.animate-in');
+  elements.forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.1}s`;
+  });
+}
+
+/**
+ * Renders homepage article feed
+ */
+function initHomeFeed() {
+  const feed = document.getElementById('article-feed');
+  if (!feed) return;
+
+  const featuredRow = document.createElement('div');
+  featuredRow.className = 'feed-featured-row';
+
+  ARTICLES.forEach((article, index) => {
+    const isFeatured = index < 2;
+    const card = document.createElement('article');
+    card.className = `article-card ${isFeatured ? 'featured' : 'compact'} animate-in`;
+    card.dataset.category = article.category;
+    card.dataset.title = article.title.toLowerCase();
+
+    if (isFeatured) {
+      card.innerHTML = `
+        <a href="${getPostUrl(article.id)}" class="card-image">
+          <img src="${article.image}" alt="${article.title}" width="640" height="400" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge ${getBadgeClass(article.category)}">${article.categoryLabel}</span>
+            <time class="card-date">${article.date}</time>
+          </div>
+          <h2 class="card-title"><a href="${getPostUrl(article.id)}">${article.title}</a></h2>
+          <p class="card-excerpt">${article.excerpt}</p>
+          <a href="${getPostUrl(article.id)}" class="card-link">Read More →</a>
+        </div>`;
+      featuredRow.appendChild(card);
+    } else {
+      card.innerHTML = `
+        <a href="${getPostUrl(article.id)}" class="card-thumb">
+          <img src="${article.image}" alt="${article.title}" width="120" height="80" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge ${getBadgeClass(article.category)}">${article.categoryLabel}</span>
+            <time class="card-date">${article.date}</time>
+          </div>
+          <h3 class="card-title"><a href="${getPostUrl(article.id)}">${article.title}</a></h3>
+          <p class="card-excerpt">${article.excerpt.substring(0, 120)}…</p>
+        </div>`;
+      feed.appendChild(card);
+    }
+  });
+
+  if (featuredRow.children.length) {
+    feed.insertBefore(featuredRow, feed.firstChild);
+  }
+}
+
+/**
+ * Renders featured products masonry on homepage
+ */
+async function initFeaturedProducts() {
+  const grid = document.getElementById('featured-products');
+  if (!grid) return;
+
+  const template = await fetchComponentTemplate('components/product-widget.html');
+
+  FEATURED_PRODUCTS.forEach((product, i) => {
+    const card = template ? template.cloneNode(true) : document.createElement('div');
+    card.classList.add('product-card', 'animate-in');
+    card.style.animationDelay = `${i * 0.1}s`;
+
+    const img = card.querySelector('img');
+    const title = card.querySelector('h3');
+    const verdict = card.querySelector('.product-verdict');
+    const stars = card.querySelector('.product-stars');
+    const link = card.querySelector('.product-price-link');
+
+    if (img) {
+      img.src = product.image;
+      img.alt = product.name;
+    }
+    if (title) title.textContent = product.name;
+    if (verdict) verdict.textContent = product.verdict;
+    if (stars) stars.textContent = renderStars(product.stars);
+    if (link) {
+      link.href = product.url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+
+    grid.appendChild(card);
+  });
+}
+
+/**
+ * Fetches a component HTML file and returns the inner element
+ * @param {string} path
+ * @returns {Promise<Element|null>}
+ */
+async function fetchComponentTemplate(path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) return null;
+    const html = await response.text();
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = html.trim();
+    return wrapper.querySelector('article, .product-card') || wrapper.firstElementChild;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Blog page — renders grid and handles filter/search
+ */
+async function initBlogPage() {
+  const grid = document.getElementById('blog-grid');
+  if (!grid) return;
+
+  const template = await fetchComponentTemplate('components/post-card.html');
+
+  ARTICLES.forEach((article, i) => {
+    const card = template ? template.cloneNode(true) : document.createElement('article');
+    if (!template) card.className = 'blog-card';
+
+    card.classList.add('blog-card', 'animate-in');
+    card.dataset.category = article.category;
+    card.dataset.date = article.date;
+    card.dataset.title = article.title.toLowerCase();
+    card.style.animationDelay = `${i * 0.1}s`;
+
+    const imgLink = card.querySelector('.card-image') || card;
+    const img = card.querySelector('.card-image img') || card.querySelector('img');
+    const badge = card.querySelector('.badge');
+    const dateEl = card.querySelector('.card-date');
+    const titleEl = card.querySelector('.card-title');
+    const excerptEl = card.querySelector('.card-excerpt');
+    const readLink = card.querySelector('.card-link');
+
+    const postUrl = getPostUrl(article.id);
+    card.querySelectorAll('a').forEach((link) => {
+      link.href = postUrl;
+    });
+    if (imgLink.tagName === 'A') imgLink.href = postUrl;
+    if (img) {
+      img.src = article.image;
+      img.alt = article.title;
+    }
+    if (badge) {
+      badge.className = `badge ${getBadgeClass(article.category)}`;
+      badge.textContent = article.categoryLabel;
+    }
+    if (dateEl) dateEl.textContent = article.date;
+    if (titleEl) {
+      titleEl.innerHTML = `<a href="${postUrl}">${article.title}</a>`;
+    }
+    if (excerptEl) excerptEl.textContent = article.excerpt;
+    if (readLink) readLink.href = postUrl;
+
+    grid.appendChild(card);
+  });
+
+  const tabs = document.querySelectorAll('.category-tab');
+  const searchInput = document.getElementById('blog-search');
+  let activeCategory = 'all';
+
+  /**
+   * Filters blog cards by category and search keyword
+   */
+  function filterCards() {
+    const query = (searchInput?.value || '').toLowerCase().trim();
+    const cards = grid.querySelectorAll('.blog-card');
+
+    cards.forEach((card) => {
+      const matchCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+      const matchSearch = !query || card.dataset.title.includes(query);
+      const visible = matchCategory && matchSearch;
+
+      if (!visible) {
+        card.classList.add('fade-out');
+        card.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName === 'opacity') {
+            card.classList.add('hidden');
+            card.removeEventListener('transitionend', handler);
+          }
+        });
+      } else {
+        card.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          card.classList.remove('fade-out');
+        });
+      }
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeCategory = tab.dataset.category;
+      filterCards();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterCards);
+  }
+}
+
+/**
+ * Sidebar search filters homepage feed
+ */
+function initSidebarSearch() {
+  const input = document.getElementById('sidebar-search');
+  const feed = document.getElementById('article-feed');
+  if (!input || !feed) return;
+
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim();
+    feed.querySelectorAll('.article-card').forEach((card) => {
+      const title = card.dataset.title || '';
+      card.style.display = !query || title.includes(query) ? '' : 'none';
+    });
+  });
+}
+
+/**
+ * Products page — renders full review panels
+ */
+function initProductsPage() {
+  const list = document.getElementById('products-list');
+  if (!list) return;
+
+  PRODUCT_REVIEWS.forEach((product, i) => {
+    const panel = document.createElement('article');
+    panel.className = 'product-panel animate-in';
+    panel.style.animationDelay = `${i * 0.1}s`;
+
+    const prosHtml = product.pros.map((p) => `<li>${p}</li>`).join('');
+    const consHtml = product.cons.map((c) => `<li>${c}</li>`).join('');
+    const scorePercent = (product.score / 10) * 100;
+
+    panel.innerHTML = `
+      <div class="product-panel-image">
+        <img src="${product.image}" alt="${product.brand} ${product.model}" width="800" height="450" loading="lazy">
+      </div>
+      <div class="product-panel-body">
+        <h3>${product.brand} ${product.model}</h3>
+        <p class="verdict">${product.verdict}</p>
+        <div class="pros-cons-grid">
+          <ul class="pros-list">${prosHtml}</ul>
+          <ul class="cons-list">${consHtml}</ul>
+        </div>
+        <div class="score-section">
+          <span class="score-stars">${renderStars(product.stars)}</span>
+          <span class="score-numeric">${product.score} / 10</span>
+          <div class="score-bar">
+            <div class="score-bar-fill" style="width:${scorePercent}%"></div>
+          </div>
+        </div>
+        <a href="${product.url}" class="btn btn-primary" target="_blank" rel="noopener">Check Verified Price →</a>
+      </div>`;
+    list.appendChild(panel);
+  });
+}
+
+/**
+ * Renders a single article on the post detail page
+ */
+function renderPostDetail() {
+  const container = document.getElementById('post-content');
+  if (!container) return;
+
+  const id = getPostIdFromUrl();
+  const article = ARTICLES.find((a) => a.id === id) || ARTICLES[0];
+  const index = ARTICLES.findIndex((a) => a.id === article.id);
+  const prevArticle = ARTICLES[index + 1];
+  const nextArticle = ARTICLES[index - 1];
+
+  document.title = `${article.title} — RestlessQuil`;
+
+  container.innerHTML = getArticleBody(article.id);
+
+  const headerEl = document.getElementById('post-header-content');
+  if (headerEl) {
+    headerEl.innerHTML = `
+      <div class="post-meta">
+        <span class="badge ${getBadgeClass(article.category)}">${article.categoryLabel}</span>
+        <time class="card-date">${article.date}</time>
+      </div>
+      <h1>${article.title}</h1>`;
+  }
+
+  const heroImg = document.getElementById('post-hero-img');
+  if (heroImg) {
+    heroImg.src = article.image;
+    heroImg.alt = article.title;
+  }
+
+  const navPrev = document.getElementById('nav-prev');
+  const navNext = document.getElementById('nav-next');
+  if (navPrev && prevArticle) {
+    navPrev.style.display = '';
+    navPrev.href = getPostUrl(prevArticle.id);
+    navPrev.innerHTML = `
+      <img src="${prevArticle.image}" alt="" width="64" height="64" loading="lazy">
+      <div>
+        <span class="nav-label">← Previous</span>
+        <span class="nav-title">${prevArticle.title}</span>
+      </div>`;
+  } else if (navPrev) {
+    navPrev.style.display = 'none';
+  }
+
+  if (navNext && nextArticle) {
+    navNext.style.display = '';
+    navNext.href = getPostUrl(nextArticle.id);
+    navNext.innerHTML = `
+      <div style="text-align:right;">
+        <span class="nav-label">Next →</span>
+        <span class="nav-title">${nextArticle.title}</span>
+      </div>
+      <img src="${nextArticle.image}" alt="" width="64" height="64" loading="lazy">`;
+  } else if (navNext) {
+    navNext.style.display = 'none';
+  }
+
+  renderPostRecommendations();
+  renderPostSidebar(article);
+}
+
+/**
+ * Renders sticky sidebar on post detail page
+ * @param {Object} currentArticle
+ */
+function renderPostSidebar(currentArticle) {
+  const sidebar = document.getElementById('post-sidebar');
+  if (!sidebar) return;
+
+  const related = ARTICLES.filter((a) => a.id !== currentArticle.id).slice(0, 4);
+
+  const relatedHtml = related.map((a) => `
+    <li>
+      <a href="${getPostUrl(a.id)}">
+        <img src="${a.image}" alt="" width="72" height="48" loading="lazy">
+        <span class="sidebar-post-meta">
+          <span class="badge ${getBadgeClass(a.category)}">${a.categoryLabel}</span>
+          <span class="sidebar-post-title">${a.title}</span>
+        </span>
+      </a>
+    </li>`).join('');
+
+  sidebar.innerHTML = `
+    <div class="sidebar-widget author-card">
+      <img src="${IMG.authorAvatar}" alt="Elena Voss" class="author-avatar" width="72" height="72" loading="lazy">
+      <h4 class="author-name">Elena Voss</h4>
+      <p class="author-bio">Writer, skeptic, and person who actually tests things before recommending them.</p>
+      <div class="social-icons">
+        <a href="#" class="social-twitter" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" class="social-linkedin" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.739v5.867H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 11-.001-4.126 2.062 2.062 0 010 4.126zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Keep Reading</h3>
+      <ul class="post-sidebar-list">${relatedHtml}</ul>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Popular Tags</h3>
+      <div class="tag-cloud">
+        <a href="blog.html" class="tag-md">minimalism</a>
+        <a href="blog.html" class="tag-sm">espresso</a>
+        <a href="blog.html" class="tag-md">tech</a>
+        <a href="blog.html" class="tag-sm">fashion</a>
+        <a href="blog.html" class="tag-md">productivity</a>
+      </div>
+    </div>
+    <div class="sidebar-widget post-sidebar-cta">
+      <h3>Questions?</h3>
+      <p>Ask me about a product before you buy — I reply to every message.</p>
+      <a href="about.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+    <div class="sidebar-widget post-sidebar-share">
+      <h3>Share This</h3>
+      <div class="social-icons">
+        <a href="#" class="social-twitter" aria-label="Share on Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="social-instagram" aria-label="Share on Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="#" class="social-linkedin" aria-label="Share on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.739v5.867H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 11-.001-4.126 2.062 2.062 0 010 4.126zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>`;
+}
+
+/**
+ * Post detail — loads article by id from URL hash or query
+ */
+function initPostDetail() {
+  if (!document.getElementById('post-content')) return;
+
+  renderPostDetail();
+  window.addEventListener('hashchange', renderPostDetail);
+}
+
+/**
+ * Returns full HTML body content for article id
+ * @param {number} id
+ * @returns {string}
+ */
+function getArticleBody(id) {
+  const bodies = {
+    1: `
+      <p>I bought the Oura Ring because I was tired of my Apple Watch buzzing me awake at 6 AM with a "time to stand" notification while I was still half asleep. A friend swore the ring was different — quieter, less demanding, more informative. I was skeptical but desperate enough to try anything that might help me sleep better.</p>
+      <p>Within the first week, the sleep data alone justified the purchase. I learned I was waking up four to six times a night without realizing it. The ring tracked my heart rate variability, body temperature trends, and readiness scores with a level of detail my watch never offered. I started adjusting my evening routine based on what the data showed, not what some generic wellness article recommended.</p>
+      <figure class="figure-float">
+        <img src="images/hand-health.jpg" alt="Smart ring on hand" width="400" height="300" loading="lazy">
+        <figcaption>The ring is subtle enough that most people don't notice it.</figcaption>
+      </figure>
+      <p>The activity tracking is less impressive than dedicated sports watches, and I'll admit that openly. If you're training for a marathon, this isn't your device. But for daily movement, step counts, and general activity awareness, it does the job without making me feel like I'm wearing a computer on my wrist.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">OURA</div>
+        <div class="sponsor-text">
+          <p>Oura offers a 45-day trial on their latest ring — longer than most competitors. Worth trying if you're on the fence.</p>
+        </div>
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Try Oura →</a>
+      </div>
+      <p>Charging is my biggest complaint. The ring needs its dock every five to seven days, and the dock itself is easy to lose. I've nearly thrown it out twice thinking it was a random plastic cap. The <a href="#" class="link-product">Oura Ring Gen 3</a> also requires a monthly subscription for full feature access, which still annoys me even after six months.</p>
+      <div class="clearfix">
+        <p>Would I go back to a watch? Honestly, no. The ring fits my life better. It doesn't compete with my outfits, doesn't buzz during meetings, and doesn't make me feel tethered to a screen. For someone who values data but hates being nagged by devices, it's the best compromise I've found.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/smart-watch.jpg" alt="Ring closeup" width="400" height="300" loading="lazy">
+          <figcaption>Close-up of the titanium finish.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/charging-dock.jpg" alt="Charging dock" width="400" height="300" loading="lazy">
+          <figcaption>The charging dock — easy to misplace.</figcaption>
+        </figure>
+      </figure>
+      <h2>What I'd Tell a Friend</h2>
+      <p>If you care about sleep and hate wearing watches, try the ring. If you need GPS and workout metrics, skip it. And read the <a href="#" class="link-standard">full Oura comparison guide</a> before buying — the subscription model catches people off guard.</p>
+      <div class="callout-platform">
+        <strong>Platform note:</strong> I bought mine through <a href="#">Oura's official store</a> for the extended trial. Third-party sellers don't always include it.
+      </div>`,
+    2: `
+      <p>I stood in my closet last December and counted 47 items I hadn't worn in over a year. Dresses from impulse purchases, jeans from a trend I never embraced, sweaters that felt right in the store and wrong at home. The pile of unworn clothes wasn't just wasteful — it was a record of every moment I let marketing convince me I needed something new.</p>
+      <p>So I made a rule: ten pieces this year. Not ten outfits — ten individual items. A coat, a pair of boots, two shirts, whatever. Each purchase requires a week of consideration and a written justification in my notebook. It sounds extreme, but I've already broken the habit of opening shopping apps when I'm bored.</p>
+      <figure class="figure-float right">
+        <img src="images/wardrobe.jpg" alt="Minimal wardrobe" width="400" height="300" loading="lazy">
+        <figcaption>My entire winter wardrobe fits on one rack now.</figcaption>
+      </figure>
+      <p>Fast fashion didn't die for me because of ethics alone — though the environmental argument matters. It died because I finally admitted that $25 tops don't make me feel good. They make me feel cheap. The fabrics pill after two washes, the seams twist, and I end up donating them within months anyway.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Sponsored</span>
+        <div class="sponsor-logo">EVER</div>
+        <div class="sponsor-text">
+          <p>Everlane's Choose What You Pay sale runs quarterly — I bought my only new coat there this year.</p>
+        </div>
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Shop Everlane →</a>
+      </div>
+      <p>What surprised me most was how much mental energy I recovered. Getting dressed takes five minutes now because every item in my closet actually works together. I used to spend twenty minutes trying combinations that never felt right.</p>
+      <div class="clearfix">
+        <p>I'm not preaching minimalism as a moral superiority thing. I'm saying it solved a problem I didn't know I had — the exhaustion of owning too much stuff I didn't like.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/kitchen-cooking.jpg" alt="Fabric texture" width="400" height="300" loading="lazy">
+          <figcaption>Quality fabric lasts — cheap fabric betrays you quickly.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/street-style.jpg" alt="Street style" width="400" height="300" loading="lazy">
+          <figcaption>Less stuff, more intention.</figcaption>
+        </figure>
+      </figure>
+      <h2>The Ten-Piece List So Far</h2>
+      <p>Three items in, seven to go. A wool coat, leather boots, and a linen shirt. Each one cost more than I'd normally spend, but I wear them constantly. That's the math that actually works.</p>`,
+    3: `
+      <p>I used to leave my apartment every morning and walk to the café downstairs for a $6 latte. It felt like a small luxury — a ritual, a treat, a reason to leave the house. Then I multiplied $6 by 260 workdays and realized I was spending $1,560 a year on coffee I could make at home.</p>
+      <p>The <a href="#" class="link-product">Breville Barista Express</a> wasn't an impulse buy. I researched for three months, read Reddit threads, watched YouTube reviews, and still felt nervous clicking purchase on a $500 machine. My partner thought I was insane. My barista friend thought I was betraying the craft.</p>
+      <figure class="figure-float">
+        <img src="images/coffee-cup.jpg" alt="Latte art" width="400" height="300" loading="lazy">
+        <figcaption>My latte art is improving — slowly.</figcaption>
+      </figure>
+      <p>Three months later, I haven't been to that café once. The espresso is better than what they served — richer, more balanced, with crema that actually holds. The built-in grinder means I grind fresh beans every morning, and the difference from pre-ground supermarket coffee is not subtle. It's dramatic.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">BRV</div>
+        <div class="sponsor-text">
+          <p>Breville's refurbished program saved me $120 on my machine — same warranty, barely used.</p>
+        </div>
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener">See Refurb Deals →</a>
+      </div>
+      <p>Learning curve is real, though. My first twenty shots were either too bitter or too sour. Milk frothing took another month of practice before I stopped producing foam that looked like dish soap. I'm still not great at latte art, but the coffee itself is consistently excellent.</p>
+      <div class="clearfix">
+        <p>Maintenance is the hidden cost nobody mentions. Descaling, cleaning the group head, wiping the steam wand immediately — skip any of these and the machine punishes you. I spend about fifteen minutes a week on upkeep.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/espresso.jpg" alt="Espresso machine" width="400" height="300" loading="lazy">
+          <figcaption>The machine dominates my counter — worth the space.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/morning-kitchen.jpg" alt="Morning kitchen" width="400" height="300" loading="lazy">
+          <figcaption>Morning ritual: beans, grind, pull, froth.</figcaption>
+        </figure>
+      </figure>
+      <h2>Would I Buy It Again?</h2>
+      <p>Absolutely. The machine paid for itself in four months. More importantly, my mornings have a anchor now — something I do with my hands that isn't scrolling. That alone saved my sanity during a stressful quarter at work.</p>
+      <div class="callout-platform">
+        <strong>Where I bought:</strong> Amazon had the best price, but <a href="#">Breville's site</a> included a free bean sampler that was genuinely good.
+      </div>`
+  };
+
+  const defaultBody = `
+    <p>This is one of those stories I didn't expect to write. I started experimenting with something small — a habit, a product, a routine — and it changed how I think about the bigger picture. I'm sharing this because friends keep asking, and I'd rather write it once than repeat myself at every dinner.</p>
+    <p>What I learned wasn't revolutionary. It was embarrassingly simple once I saw it clearly. The hard part was paying attention long enough to notice the pattern. Most of us are too busy reacting to stop and observe.</p>
+    <figure class="figure-float">
+      <img src="images/journal-books.jpg" alt="Lifestyle detail" width="400" height="300" loading="lazy">
+      <figcaption>Small details matter more than big gestures.</figcaption>
+    </figure>
+    <p>I tried the obvious solutions first — apps, gadgets, systems recommended by people with more followers than sense. None of them stuck. What worked was boring, repeatable, and didn't require a subscription.</p>
+    <div class="sponsor-widget">
+      <span class="sponsor-label">Sponsored</span>
+      <div class="sponsor-logo">BRAND</div>
+      <div class="sponsor-text">
+        <p>A partner I actually use — not just one I'm paid to mention.</p>
+      </div>
+      <a href="#" class="btn btn-primary" target="_blank" rel="noopener">Learn More →</a>
+    </div>
+    <p>The <a href="#" class="link-product">product I recommend</a> isn't perfect, but it's the one that survived my skepticism. I still use it daily, which is the only metric that matters to me.</p>
+    <div class="clearfix">
+      <p>If you're considering a similar change, start smaller than you think. I wasted months trying to overhaul everything when adjusting one habit would have been enough.</p>
+    </div>
+    <figure class="figure-grid">
+      <figure>
+        <img src="images/planner-desk.jpg" alt="Detail one" width="400" height="300" loading="lazy">
+        <figcaption>The setup that finally worked.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/coffee-morning.jpg" alt="Detail two" width="400" height="300" loading="lazy">
+        <figcaption>Context matters more than tools.</figcaption>
+      </figure>
+    </figure>
+    <h2>What I'd Do Differently</h2>
+    <p>I'd start sooner and trust my instincts over trending advice. The <a href="#" class="link-standard">resources that helped me</a> were almost all from people who'd actually done the thing — not influencers who'd read about it.</p>
+    <div class="callout-platform">
+      <strong>Platform tip:</strong> Check <a href="#">this guide</a> before spending money on gear you might not need.
+    </div>`;
+
+  return bodies[id] || defaultBody;
+}
+
+/**
+ * Renders post recommendation cards at article end
+ */
+function renderPostRecommendations() {
+  const container = document.getElementById('post-recommendations');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  const recs = [
+    {
+      name: 'Oura Ring Gen 3',
+      image: IMG.smartWatch,
+      stars: 4,
+      pros: ['Best sleep tracking', 'Comfortable 24/7 wear'],
+      cons: ['Subscription required'],
+      url: '#'
+    },
+    {
+      name: 'Breville Barista Express',
+      image: IMG.espresso,
+      stars: 5,
+      pros: ['Built-in grinder', 'Consistent shots'],
+      cons: ['Needs regular cleaning'],
+      url: '#'
+    }
+  ];
+
+  recs.forEach((rec) => {
+    const card = document.createElement('div');
+    card.className = 'rec-card';
+    const prosHtml = rec.pros.map((p) => `<li>${p}</li>`).join('');
+    const consHtml = rec.cons.map((c) => `<li>${c}</li>`).join('');
+    card.innerHTML = `
+      <img src="${rec.image}" alt="${rec.name}" width="88" height="88" loading="lazy">
+      <div class="rec-card-body">
+        <h4>${rec.name}</h4>
+        <div class="rec-stars">${renderStars(rec.stars)}</div>
+        <div class="rec-pros-cons">
+          <ul class="rec-pros">${prosHtml}</ul>
+          <ul class="rec-cons">${consHtml}</ul>
+        </div>
+        <a href="${rec.url}" class="btn btn-outline" target="_blank" rel="noopener">Check Price →</a>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+/**
+ * Contact form floating labels
+ */
+function initFloatingLabels() {
+  const groups = document.querySelectorAll('.form-group');
+  groups.forEach((group) => {
+    const input = group.querySelector('input, textarea');
+    if (!input) return;
+
+    const checkFilled = () => {
+      if (input.value.trim()) {
+        input.classList.add('filled');
+      } else {
+        input.classList.remove('filled');
+      }
+    };
+
+    input.addEventListener('input', checkFilled);
+    input.addEventListener('blur', checkFilled);
+    checkFilled();
+  });
+
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thanks for reaching out! I\'ll get back to you soon.');
+      form.reset();
+    });
+  }
+}
+
+/**
+ * Main initialization on DOM ready
+ */
+async function init() {
+  await loadComponent('components/header.html', 'header-placeholder');
+  await loadComponent('components/footer.html', 'footer-placeholder');
+
+  if (document.getElementById('sidebar-placeholder')) {
+    await loadComponent('components/sidebar.html', 'sidebar-placeholder');
+  }
+
+  initNavigation();
+  initBackToTop();
+  initAnimations();
+  initHomeFeed();
+  await initFeaturedProducts();
+  await initBlogPage();
+  initSidebarSearch();
+  initProductsPage();
+  initPostDetail();
+  initFloatingLabels();
+}
+
+document.addEventListener('DOMContentLoaded', init);
