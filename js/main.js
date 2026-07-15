@@ -22,7 +22,11 @@ const IMG = {
   morningKitchen: 'images/morning-kitchen.jpg',
   coffeeMorning: 'images/coffee-morning.jpg',
   aboutTeam: 'images/about-team.jpg',
-  authorAvatar: 'images/author-avatar.jpg'
+  authorAvatar: 'images/author-avatar.jpg',
+  galleryWall: 'images/gallery-wall.jpg',
+  murciFashion: 'images/murci-fashion.jpg',
+  mintBoutique: 'images/mint-boutique.jpg',
+  vekHome: 'images/21vek-home.jpg'
 };
 
 /**
@@ -50,6 +54,46 @@ function getPostIdFromUrl() {
 
 /** @type {Array<Object>} Article metadata (newest → oldest) */
 const ARTICLES = [
+  {
+    id: 11,
+    date: '2026-07-06',
+    category: 'product-recs',
+    categoryLabel: 'Product Recs',
+    title: 'Shop Smart, Live Better with 21vek BY',
+    image: IMG.vekHome,
+    excerpt: 'I spent a weekend comparing prices on everything from a new kettle to a washing machine, and 21vek BY kept surfacing with deals I hadn\'t found elsewhere. The site isn\'t flashy, but the selection and delivery options made furnishing my apartment feel less overwhelming.',
+    slug: 'shop-smart-21vek-by'
+  },
+  {
+    id: 12,
+    date: '2026-07-04',
+    category: 'fashion',
+    categoryLabel: 'Fashion',
+    title: 'The Murci Woman: Confident, Stylish, Unique',
+    image: IMG.murciFashion,
+    excerpt: 'I stumbled on Murci while looking for a dress that didn\'t look like every other option on my feed. The brand leans into bold silhouettes and confident colour — the kind of pieces that make you stand taller without trying too hard.',
+    slug: 'murci-woman-confident-stylish'
+  },
+  {
+    id: 13,
+    date: '2026-07-02',
+    category: 'lifestyle',
+    categoryLabel: 'Lifestyle',
+    title: 'Create a Gallery Wall with Etsy Art Prints',
+    image: IMG.galleryWall,
+    excerpt: 'My living room had a blank wall that stared at me for months. I finally built a gallery wall using art prints from Etsy — affordable, personal, and way less intimidating than I expected. Here\'s the process that actually worked.',
+    slug: 'gallery-wall-etsy-art-prints'
+  },
+  {
+    id: 14,
+    date: '2026-07-01',
+    category: 'fashion',
+    categoryLabel: 'Fashion',
+    title: 'The Mint Julep Boutique: Effortless Style for Every Day',
+    image: IMG.mintBoutique,
+    excerpt: 'I used to overthink every outfit until I found The Mint Julep Boutique. Their everyday pieces — soft dresses, easy tops, relaxed denim — slot into my wardrobe without a styling degree. Effortless is the right word.',
+    slug: 'mint-julep-boutique-effortless-style'
+  },
   {
     id: 1,
     date: '2026-02-14',
@@ -834,6 +878,158 @@ function getArticleBody(id) {
       <p>Absolutely. The machine paid for itself in four months. More importantly, my mornings have a anchor now — something I do with my hands that isn't scrolling. That alone saved my sanity during a stressful quarter at work.</p>
       <div class="callout-platform">
         <strong>Where I bought:</strong> Amazon had the best price, but <a href="#">Breville's site</a> included a free bean sampler that was genuinely good.
+      </div>`,
+    11: `
+      <p>Moving into a new apartment always surfaces the same problem: you need a kettle, a lamp, maybe a vacuum, and suddenly you're juggling six browser tabs comparing prices you don't fully trust. A friend in Minsk mentioned <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-product" target="_blank" rel="noopener">21vek BY</a>, and I spent an evening browsing out of curiosity. I wasn't expecting to actually buy anything — but the site earned a bookmark.</p>
+      <p><a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-standard" target="_blank" rel="noopener">21vek BY</a> is one of Belarus's largest online retailers — home appliances, electronics, furniture, kitchenware, and even garden equipment under one roof. What impressed me wasn't flashy marketing. It was how straightforward the product pages are: clear specs, honest customer reviews, and delivery options that don't require decoding fine print.</p>
+      <figure class="figure-float">
+        <img src="images/21vek-home.jpg" alt="Modern kitchen with refrigerator and home appliances" width="400" height="300" loading="lazy">
+        <figcaption>From kitchen appliances to living-room electronics — one stop at 21vek BY.</figcaption>
+      </figure>
+      <p>I started with small purchases to test the waters — a desk lamp, a set of storage boxes, a kettle I'd been putting off buying. Each order arrived on time, packaged properly, and matched the listing photos. That consistency matters more than any discount banner when you're furnishing a space from scratch. The <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-standard" target="_blank" rel="noopener">21vek BY</a> checkout process was simple, and I received SMS updates at every delivery stage.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">21VEK</div>
+        <div class="sponsor-text">
+          <p>21vek BY runs seasonal promotions on home appliances and electronics — worth checking before a big purchase.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="btn btn-primary" target="_blank" rel="noopener">Shop 21vek BY →</a>
+      </div>
+      <p>For larger items — a washing machine, a TV, a vacuum cleaner — <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-product" target="_blank" rel="noopener">21vek BY</a> offers installment plans and delivery scheduling that actually work. I compared a fridge across three retailers, and the total cost on 21vek — including delivery and setup — came in lower. Not by a huge margin, but enough to notice.</p>
+      <p>The electronics section surprised me most. Laptops, smartphones, headphones, and smart-home devices are all listed with comparable specs and side-by-side brand filters. I spent an hour comparing robot vacuums without feeling lost — something I can't say about most marketplace sites. If you're upgrading your home tech, <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-product" target="_blank" rel="noopener">21vek BY</a> makes the research part bearable.</p>
+      <div class="clearfix">
+        <p>The site isn't perfect. The search function can feel broad when you know exactly what you want, and some product descriptions read like they were written by engineers for engineers. But if you're patient and willing to read specs, the value is real. Customer support responded within a day when I had a question about warranty coverage on a blender.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/21vek-appliances.jpg" alt="Washing machine and laundry appliances" width="400" height="300" loading="lazy">
+          <figcaption>Large appliances with delivery and installation options.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/21vek-shopping.jpg" alt="Shopping for electronics and gadgets online" width="400" height="300" loading="lazy">
+          <figcaption>Compare electronics and prices before you commit.</figcaption>
+        </figure>
+      </figure>
+      <h2>Shop Smart, Not Impulsively</h2>
+      <p>My rule now: add items to a wishlist, wait 48 hours, then check if <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-standard" target="_blank" rel="noopener">21vek BY</a> has a better price or bundle. Living better doesn't mean buying more — it means buying once, correctly. This platform helped me do that.</p>
+      <h2>What I'd Buy Next</h2>
+      <p>I'm eyeing a cordless vacuum and a new coffee machine next — both sitting in my <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" class="link-standard" target="_blank" rel="noopener">21vek BY</a> wishlist while I wait for a seasonal sale. The point isn't to fill every corner of the apartment immediately. It's to build a home thoughtfully, one reliable purchase at a time.</p>
+      <div class="callout-platform">
+        <strong>Platform note:</strong> Delivery times vary by region. Check the estimated date on <a href="https://www.linkbux.com/track/74539HiGqCajgt0oy6skDAkUMzy2rI9tQlaIYmA6zGqp_adWmhY_aSWZnwBJzFzab306lc?url=https%3A%2F%2Fwww.21vek.by%2F" target="_blank" rel="noopener">21vek BY</a> before ordering time-sensitive items. Warranty terms are listed on each product page — worth reading before checkout.
+      </div>`,
+    12: `
+      <p>I have a specific frustration with fashion right now: everything looks the same. Scroll through any feed and you'll see the same midi dress, the same neutral palette, the same "effortless" pose in a beige apartment. I wanted something with actual personality — and a friend pointed me toward <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-product" target="_blank" rel="noopener">Murci</a>.</p>
+      <p><a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-standard" target="_blank" rel="noopener">Murci</a> is a UK-based womenswear brand built for women who want to feel confident without dressing like everyone else. Think bold cuts, statement sleeves, rich colours, and silhouettes that photograph well but also work in real life — at dinner, at the office, walking to the tube in the rain.</p>
+      <figure class="figure-float right">
+        <img src="images/murci-fashion.jpg" alt="Woman in bold Murci-style fashion editorial outfit" width="400" height="300" loading="lazy">
+        <figcaption>The Murci aesthetic: polished, bold, and unapologetically feminine.</figcaption>
+      </figure>
+      <p>I ordered a midi dress first — deep burgundy, structured shoulders, a slit that felt daring without being impractical. The fabric had weight to it. It didn't cling in weird places or billow when the wind picked up. I wore it to a work event and three people asked where it was from. That never happens with my usual online purchases. Browsing the <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-standard" target="_blank" rel="noopener">Murci</a> new-arrivals page felt like scrolling through a mood board rather than a warehouse sale.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">MURCI</div>
+        <div class="sponsor-text">
+          <p>Murci releases limited drops regularly — new arrivals sell out fast on popular sizes.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="btn btn-primary" target="_blank" rel="noopener">Shop Murci →</a>
+      </div>
+      <p>What defines the <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-product" target="_blank" rel="noopener">Murci</a> woman? She's not chasing trends — she's choosing pieces that reflect how she wants to feel. Confident. Stylish. Unique. The brand's co-ords and occasion wear are particularly strong: matching sets that look intentional without requiring a stylist.</p>
+      <p>My second order was a two-piece co-ord — wide-leg trousers and a cropped blazer in the same jewel-tone fabric. I wore the blazer with jeans the following week and the trousers with a simple white tee. That's the kind of versatility <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-product" target="_blank" rel="noopener">Murci</a> nails: pieces that feel special but don't demand a single way to wear them.</p>
+      <div class="clearfix">
+        <p>Sizing runs slightly small on some styles — I learned this the hard way with a fitted blazer. Check the size guide and read reviews from people with a similar build. Returns are straightforward, which gave me confidence to try pieces outside my usual comfort zone. The packaging is clean and minimal, which I appreciate — no excess tissue paper or plastic hangers to throw away.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/murci-dress.jpg" alt="Elegant Murci-style midi dress for occasion wear" width="400" height="300" loading="lazy">
+          <figcaption>Occasion dresses with structure and personality.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/murci-style.jpg" alt="Confident woman in bold street style outfit" width="400" height="300" loading="lazy">
+          <figcaption>Statement pieces that work beyond the photo shoot.</figcaption>
+        </figure>
+      </figure>
+      <h2>Building a Murci-Inspired Wardrobe</h2>
+      <p>If you're new to the brand, start with one hero piece — a dress or a co-ord — and build around it. <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-standard" target="_blank" rel="noopener">Murci</a> designs tend to carry the outfit, so you don't need much else. A neutral heel, simple jewellery, and you're done.</p>
+      <h2>Would I Shop Murci Again?</h2>
+      <p>Absolutely. <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" class="link-standard" target="_blank" rel="noopener">Murci</a> isn't the cheapest option on the market, but the pieces earn their place in my wardrobe. I reach for them when I want to feel like the best version of myself — not a copy of someone else's Pinterest board.</p>
+      <div class="callout-platform">
+        <strong>Shipping note:</strong> International delivery from <a href="https://www.linkbux.com/track/d5991jkCQa3DhnbIeMIkluG7p5FKhR4OZ3fVNX1_aoh7UZ_bHb4SsiGz3V78fZQ3OmuWvkngpL?url=https%3A%2F%2Fwww.murci.co.uk%2F" target="_blank" rel="noopener">Murci</a> typically takes 5–10 business days. Plan ahead for events and check the returns policy before ordering multiple sizes.
+      </div>`,
+    13: `
+      <p>For eight months, the largest wall in my living room stayed blank. Not intentionally — I just couldn't commit to a single piece of art expensive enough to anchor the room. Then I saw a friend's gallery wall on Instagram: mismatched frames, different sizes, art that clearly came from different places. It looked collected over time, not bought in one afternoon. She told me most of it came from <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-product" target="_blank" rel="noopener">Etsy</a>.</p>
+      <p><a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-standard" target="_blank" rel="noopener">Etsy</a> is genuinely the best marketplace I've found for affordable, unique art prints. Independent artists sell digital downloads and physical prints at prices that don't require a gallery budget. You can build an entire gallery wall for less than the cost of one framed poster from a department store.</p>
+      <figure class="figure-float">
+        <img src="images/gallery-wall.jpg" alt="Living room gallery wall with framed Etsy art prints" width="400" height="300" loading="lazy">
+        <figcaption>A gallery wall built with affordable art prints from Etsy sellers.</figcaption>
+      </figure>
+      <p>My approach was simple. I picked a colour palette first — warm terracotta, sage green, cream, and black line art — then searched <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-product" target="_blank" rel="noopener">Etsy</a> for art prints that fit. I mixed botanical illustrations, abstract shapes, and one typography piece with a quote I actually liked. Total spent on prints: under $80. Shopping on <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-standard" target="_blank" rel="noopener">Etsy</a> felt personal — each print came from a real artist with a shop page and reviews, not a faceless warehouse.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">ETSY</div>
+        <div class="sponsor-text">
+          <p>Etsy art prints are available as instant digital downloads or shipped physical prints — choose based on your timeline and budget.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/b984KLdeVbMNdyImCEL90823_aKTVfd4Z9fikha8RZvx7_blDmqFW1E7fOc4pF8ftoD3n1Jgpu_abQ_c?url=https%3A%2F%2Fwww.etsy.com%2F" class="btn btn-primary" target="_blank" rel="noopener">Browse Etsy Art →</a>
+      </div>
+      <p>Framing is where people overspend. I bought inexpensive frames from a home goods store — mixed black, natural wood, and thin brass — in three sizes: 8×10, 11×14, and 16×20. The variety in frame sizes is what makes a gallery wall look intentional rather than uniform. Lay everything on the floor first. Rearrange until it feels balanced, then hang. I used painter's tape to outline each frame position on the wall before touching a nail — a tip I wish I'd known for my first attempt.</p>
+      <p>One mistake I made early: buying too many prints in the same size. A gallery wall needs visual rhythm — one large anchor piece, a few medium prints, and smaller fillers to connect them. Once I adjusted my <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-product" target="_blank" rel="noopener">Etsy</a> cart to include more size variety, the layout came together in one afternoon.</p>
+      <div class="clearfix">
+        <p>Digital downloads from <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-standard" target="_blank" rel="noopener">Etsy</a> let you print locally at whatever size you need. I used a print shop for two larger pieces and a decent home printer for smaller ones. Quality was better than I expected on both. Most sellers include multiple file sizes in the download — A4, A3, and sometimes oversized formats for statement pieces.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/gallery-art-prints.jpg" alt="Collection of botanical and abstract art prints" width="400" height="300" loading="lazy">
+          <figcaption>Mix botanical, abstract, and typography prints for depth.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery-layout.jpg" alt="Styled living room with curated wall art arrangement" width="400" height="300" loading="lazy">
+          <figcaption>A cohesive palette ties mismatched Etsy prints together.</figcaption>
+        </figure>
+      </figure>
+      <h2>My Step-by-Step Process</h2>
+      <p>Step one: choose your palette and stick to it. Step two: buy five to seven prints from <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-product" target="_blank" rel="noopener">Etsy</a>, not fifteen. Step three: lay them out on the floor and photograph the arrangement. Step four: hang the centre piece first, then work outward. It's not complicated — but having a process stops you from overbuying.</p>
+      <h2>What I'd Tell a Friend</h2>
+      <p>Start small and build over time — that's the whole point of a gallery wall. Search <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" class="link-product" target="_blank" rel="noopener">Etsy</a> by style ("botanical art print," "abstract line art," "vintage landscape") and filter by colour. Read reviews for print quality. And don't match frames perfectly — contrast is your friend.</p>
+      <div class="callout-platform">
+        <strong>Tip:</strong> Many <a href="https://www.linkbux.com/track/aac5dkehnPV1yVv_bShbS3KYjhmv2JkVHYHFRUY6SrWV46xbiNwlZVXaozHhkPEfAlCT6KS0b?url=https%3A%2F%2Fwww.etsy.com%2F" target="_blank" rel="noopener">Etsy</a> sellers offer bundled art print sets at a discount — a good starting point if you're unsure where to begin. Favourite a few shops and revisit them when you're ready to expand the wall.
+      </div>`,
+    14: `
+      <p>My morning routine used to include standing in front of my closet for ten minutes, pulling out three outfits, and settling for whatever required the fewest decisions. I wanted clothes that looked put-together without a styling session — and a colleague mentioned <a href="https://shopthemint.com/" class="link-product" target="_blank" rel="noopener">The Mint Julep Boutique</a>.</p>
+      <p><a href="https://shopthemint.com/" class="link-standard" target="_blank" rel="noopener">The Mint Julep Boutique</a> is an online boutique built around everyday wear that actually feels special. Soft fabrics, flattering cuts, and a colour palette that mixes easily. It's the kind of store where you can buy a dress, a top, and a pair of jeans and know they'll all work together — the Southern-inspired, relaxed elegance the brand is known for.</p>
+      <figure class="figure-float right">
+        <img src="images/mint-boutique.jpg" alt="Woman in floral midi dress from boutique everyday collection" width="400" height="300" loading="lazy">
+        <figcaption>Effortless boutique style — floral dresses and easy everyday pieces.</figcaption>
+      </figure>
+      <p>I started with a floral midi dress — lightweight, comfortable, with a waist that sits in the right place. I wore it to brunch, to work on a casual Friday, and once with a denim jacket to an outdoor concert. Three occasions, one dress, zero styling stress. That's the promise of <a href="https://shopthemint.com/" class="link-product" target="_blank" rel="noopener">The Mint Julep Boutique</a>, and in my experience, they deliver. The site is easy to navigate by category — dresses, tops, new arrivals — which matters when you're shopping on a lunch break.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">MINT</div>
+        <div class="sponsor-text">
+          <p>The Mint Julep Boutique adds new arrivals weekly — dresses, tops, and accessories for everyday wear.</p>
+        </div>
+        <a href="https://shopthemint.com/" class="btn btn-primary" target="_blank" rel="noopener">Shop The Mint →</a>
+      </div>
+      <p>What sets <a href="https://shopthemint.com/" class="link-standard" target="_blank" rel="noopener">The Mint Julep Boutique</a> apart from fast fashion is consistency. The fabrics feel better. The stitching holds up after multiple washes. The sizing is more predictable — I ordered my usual size in three items and all three fit without alterations. That reliability is worth paying slightly more. I also appreciate that product photos show how pieces actually drape on a real body, not just on a hanger.</p>
+      <p>My second order focused on tops — a soft striped tee, a flowy blouse with balloon sleeves, and a casual knit I now wear twice a week. Each piece paired with jeans I already owned, which is exactly what I wanted from <a href="https://shopthemint.com/" class="link-product" target="_blank" rel="noopener">The Mint Julep Boutique</a>: clothes that integrate into an existing wardrobe instead of demanding a full reset.</p>
+      <div class="clearfix">
+        <p>Their casual range is the real strength: relaxed tees, flowy blouses, easy shorts, and denim that doesn't lose shape after a month. These are clothes for real days — school runs, coffee meetings, grocery trips, date nights — not just photoshoots. The accessories section is worth a browse too — simple earrings and layered necklaces that match the same easy aesthetic.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/mint-outfit.jpg" alt="Casual boutique outfit with relaxed blouse and jeans" width="400" height="300" loading="lazy">
+          <figcaption>Everyday tops and blouses that pair with anything.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/mint-casual.jpg" alt="Relaxed everyday summer dress and casual style" width="400" height="300" loading="lazy">
+          <figcaption>Comfortable dresses for brunch, work, and weekends.</figcaption>
+        </figure>
+      </figure>
+      <h2>How I Build Outfits Now</h2>
+      <p>One dress, one pair of sandals, done. Or a blouse, jeans, and the same earrings every time. <a href="https://shopthemint.com/" class="link-standard" target="_blank" rel="noopener">The Mint Julep Boutique</a> pieces don't need complicated styling — that's the point. I keep a short list of go-to combinations on my phone so I'm not reinventing the wheel at 7 AM.</p>
+      <h2>Effortless Style, Honestly</h2>
+      <p>I don't believe in wardrobes that require a planning session every morning. <a href="https://shopthemint.com/" class="link-product" target="_blank" rel="noopener">The Mint Julep Boutique</a> gets that. Their pieces slot into what I already own, and I've cut my getting-dressed time in half. If you want style that feels easy — not lazy, but genuinely effortless — this is where I'd start.</p>
+      <div class="callout-platform">
+        <strong>Shipping note:</strong> <a href="https://shopthemint.com/" target="_blank" rel="noopener">The Mint Julep Boutique</a> offers free shipping on orders over a set threshold — check the site for current promotions before checkout. Sale sections rotate frequently, so it's worth bookmarking if you're waiting for a specific dress.
       </div>`
   };
 
