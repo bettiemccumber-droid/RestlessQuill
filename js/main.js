@@ -26,7 +26,8 @@ const IMG = {
   galleryWall: 'images/gallery-wall.jpg',
   murciFashion: 'images/murci-fashion.jpg',
   mintBoutique: 'images/mint-boutique.jpg',
-  vekHome: 'images/21vek-home.jpg'
+  vekHome: 'images/21vek-home.jpg',
+  mauiJim: 'images/maui-jim-sunglasses.jpg'
 };
 
 /**
@@ -54,6 +55,16 @@ function getPostIdFromUrl() {
 
 /** @type {Array<Object>} Article metadata (newest → oldest) */
 const ARTICLES = [
+  {
+    id: 15,
+    date: '2026-07-20',
+    category: 'reviews',
+    categoryLabel: 'Reviews',
+    title: 'Maui Jim: Born on the Beaches of Hawaii, Worn by the World',
+    image: IMG.mauiJim,
+    excerpt: 'I bought cheap sunglasses for years until a week in Hawaii left me squinting through glare that no dark lens could fix. A local suggested Maui Jim — and the difference in colour clarity was immediate. Born on Lahaina\'s beaches, now on my face daily.',
+    slug: 'maui-jim-hawaii-sunglasses'
+  },
   {
     id: 11,
     date: '2026-07-06',
@@ -1030,6 +1041,44 @@ function getArticleBody(id) {
       <p>I don't believe in wardrobes that require a planning session every morning. <a href="https://shopthemint.com/" class="link-product" target="_blank" rel="noopener">The Mint Julep Boutique</a> gets that. Their pieces slot into what I already own, and I've cut my getting-dressed time in half. If you want style that feels easy — not lazy, but genuinely effortless — this is where I'd start.</p>
       <div class="callout-platform">
         <strong>Shipping note:</strong> <a href="https://shopthemint.com/" target="_blank" rel="noopener">The Mint Julep Boutique</a> offers free shipping on orders over a set threshold — check the site for current promotions before checkout. Sale sections rotate frequently, so it's worth bookmarking if you're waiting for a specific dress.
+      </div>`,
+    15: `
+      <p>I used to treat sunglasses as a seasonal afterthought — grab whatever was on sale at the airport, lose them within a month, repeat. That changed during a trip to Hawaii, where the light hits differently. The ocean glare on Maui's west coast was so intense that my cheap lenses turned everything flat and grey. A snorkel guide noticed me squinting and said, simply, "You need <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-product" target="_blank" rel="noopener">Maui Jim</a>."</p>
+      <p><a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-standard" target="_blank" rel="noopener">Maui Jim</a> started in 1980 on the beaches of Lahaina, Maui — born from a simple frustration with sunglasses that dimmed the world without actually protecting it. The brand's PolarizedPlus2 lens technology became the foundation: glare reduction, colour enhancement, and full UV protection in one lens. Today, <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-standard" target="_blank" rel="noopener">Maui Jim</a> is worn everywhere from Pacific coastlines to European city streets — but the Hawaiian origin still shows in how the lenses handle bright, reflective light.</p>
+      <figure class="figure-float">
+        <img src="images/maui-jim-beach.jpg" alt="Hawaiian beach with bright ocean sunlight" width="400" height="300" loading="lazy">
+        <figcaption>Born on Hawaii's beaches — where glare demands better lens technology.</figcaption>
+      </figure>
+      <p>I tried a pair of Ho'okipa readers first — lightweight, rimless, designed for active wear. The moment I put them on, the ocean changed. Blues looked deeper. Greens on the shoreline looked sharper. It wasn't a darker view — it was a clearer one. That's the difference polarized lenses make when they're engineered properly, not just tinted dark.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">MJ</div>
+        <div class="sponsor-text">
+          <p>Maui Jim offers a two-year warranty against defects and free shipping on orders — worth considering before buying cheaper alternatives.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdztLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="btn btn-primary" target="_blank" rel="noopener">Shop Maui Jim →</a>
+      </div>
+      <p>What surprised me was how well <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-product" target="_blank" rel="noopener">Maui Jim</a> performed outside Hawaii. Back home, I wore them driving, walking city streets, and sitting on a café patio. The glare off wet pavement and car windshields — the kind that gives me headaches by noon — was cut dramatically. I stopped reaching for my backup pair entirely.</p>
+      <p>The frame selection on <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-standard" target="_blank" rel="noopener">Maui Jim</a> is broader than I expected. Sport styles like Ho'okipa and Peahi for active days. Classic aviators and wayfarers for everyday. Prescription-ready options if you need them. I browsed by face shape on the site — a small detail, but it saved me from ordering a frame that would have looked wrong on me.</p>
+      <div class="clearfix">
+        <p>Price is the honest objection. <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-product" target="_blank" rel="noopener">Maui Jim</a> isn't cheap. A quality pair runs well above what you'd spend on impulse airport sunglasses. But I've replaced three cheap pairs in two years. One solid pair with proper lenses and a real warranty costs less over time — and my eyes feel noticeably less strained after long days outside.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/maui-jim-sunglasses.jpg" alt="Stylish polarized sunglasses for outdoor wear" width="400" height="300" loading="lazy">
+          <figcaption>Polarized lenses that enhance colour instead of flattening it.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/maui-jim-lenses.jpg" alt="Close-up of premium sunglasses lenses" width="400" height="300" loading="lazy">
+          <figcaption>Frame styles from sport to classic — all built around the same lens tech.</figcaption>
+        </figure>
+      </figure>
+      <h2>What I'd Tell a Friend</h2>
+      <p>If you spend real time outdoors — driving, hiking, near water — don't buy sunglasses based on darkness alone. Look for proper polarization and UV protection. <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-standard" target="_blank" rel="noopener">Maui Jim</a> built its reputation on exactly that, starting on Hawaiian beaches where anything less simply didn't work.</p>
+      <h2>Would I Buy Again?</h2>
+      <p>Without hesitation. Born on the beaches of Hawaii, worn by the world — that tagline sounded like marketing until I tested the lenses myself. Now I understand why people treat <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-product" target="_blank" rel="noopener">Maui Jim</a> as a long-term purchase rather than a vacation souvenir.</p>
+      <div class="callout-platform">
+        <strong>Fit tip:</strong> Use the virtual try-on tool on <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" target="_blank" rel="noopener">Maui Jim</a> before ordering — frame width matters more than most people realize. Returns are accepted within 30 days if the fit isn't right.
       </div>`
   };
 
