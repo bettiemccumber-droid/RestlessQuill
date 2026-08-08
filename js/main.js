@@ -27,7 +27,9 @@ const IMG = {
   murciFashion: 'images/murci-fashion.jpg',
   mintBoutique: 'images/mint-boutique.jpg',
   vekHome: 'images/21vek-home.jpg',
-  mauiJim: 'images/maui-jim-sunglasses.jpg'
+  mauiJim: 'images/maui-jim-sunglasses.jpg',
+  lskdActivewear: 'images/lskd-activewear.jpg',
+  feelGoodContacts: 'images/feelgood-contacts.jpg'
 };
 
 /**
@@ -56,6 +58,16 @@ function getPostIdFromUrl() {
 /** @type {Array<Object>} Article metadata (newest → oldest) */
 const ARTICLES = [
   {
+    id: 16,
+    date: '2026-07-29',
+    category: 'fashion',
+    categoryLabel: 'Fashion',
+    title: 'LSKD: Functional Fitness Clothing That Moves from Gym to Street',
+    image: IMG.lskdActivewear,
+    excerpt: 'I used to pack a gym bag and a change of clothes for every workout — until I found activewear that actually looked good outside the studio. LSKD bridges training, running, and everyday wear without the usual compromise.',
+    slug: 'lskd-functional-fitness-clothing'
+  },
+  {
     id: 15,
     date: '2026-07-20',
     category: 'reviews',
@@ -74,6 +86,16 @@ const ARTICLES = [
     image: IMG.vekHome,
     excerpt: 'I spent a weekend comparing prices on everything from a new kettle to a washing machine, and 21vek BY kept surfacing with deals I hadn\'t found elsewhere. The site isn\'t flashy, but the selection and delivery options made furnishing my apartment feel less overwhelming.',
     slug: 'shop-smart-21vek-by'
+  },
+  {
+    id: 17,
+    date: '2026-07-04',
+    category: 'product-recs',
+    categoryLabel: 'Product Recs',
+    title: 'Feel Good Contacts: Expert Advice from Qualified Optometrists',
+    image: IMG.feelGoodContacts,
+    excerpt: 'I put off switching contact lens suppliers for two years because I assumed online meant no real guidance. Feel Good Contacts changed that — qualified optometrists on hand, prescriptions verified properly, and prices that beat my high-street optician.',
+    slug: 'feel-good-contacts-optometrist-advice'
   },
   {
     id: 12,
@@ -1079,6 +1101,82 @@ function getArticleBody(id) {
       <p>Without hesitation. Born on the beaches of Hawaii, worn by the world — that tagline sounded like marketing until I tested the lenses myself. Now I understand why people treat <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" class="link-product" target="_blank" rel="noopener">Maui Jim</a> as a long-term purchase rather than a vacation souvenir.</p>
       <div class="callout-platform">
         <strong>Fit tip:</strong> Use the virtual try-on tool on <a href="https://www.linkbux.com/track/df61z_bqN2mVG9C7t9VdytLTjVbAAS_a5vOX_bUijfNp_be7wVm_agk4uuW2KxolvzeKT_bKDBUUnf?url=https%3A%2F%2Fwww.mauijim.com" target="_blank" rel="noopener">Maui Jim</a> before ordering — frame width matters more than most people realize. Returns are accepted within 30 days if the fit isn't right.
+      </div>`,
+    16: `
+      <p>For years my gym routine included a ritual I didn't question: train in one outfit, shower, change into something presentable, then carry a sweaty bundle to the nearest café. It was inefficient and, honestly, a little embarrassing when I ran into colleagues still in my oversized university gym tee. A trainer mentioned <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-product" target="_blank" rel="noopener">LSKD</a> — an Australian activewear brand built around the idea that fitness clothing should work as hard in the street as it does in the gym.</p>
+      <p><a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-standard" target="_blank" rel="noopener">LSKD</a> organises its collections around three activities — Training, Running, and All Day Active — which sounds like marketing until you actually wear the pieces across all three. The leggings hold up during squats without going sheer. The running shorts don't ride up on a 5K. And the All Day Active range genuinely passes for casual streetwear when you add a jacket and clean trainers.</p>
+      <figure class="figure-float right">
+        <img src="images/lskd-gym.jpg" alt="Woman training in functional activewear at the gym" width="400" height="300" loading="lazy">
+        <figcaption>Built for training — squat-proof leggings and supportive sports bras.</figcaption>
+      </figure>
+      <p>I started with a pair of black leggings and a medium-support sports bra from the <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-product" target="_blank" rel="noopener">LSKD</a> womens range. The fabric has enough compression to feel secure without cutting off circulation. No awkward waistband roll during deadlifts. After the gym, I wore the same leggings to grab coffee — and nobody looked at me like I'd forgotten to change. That's the gym-to-street test, and <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-standard" target="_blank" rel="noopener">LSKD</a> passed it on day one.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">LSKD</div>
+        <div class="sponsor-text">
+          <p>LSKD runs bundle offers on tees, shorts, and fleece — worth checking before building your first order.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="btn btn-primary" target="_blank" rel="noopener">Shop LSKD →</a>
+      </div>
+      <p>The mens range surprised me too — I bought my partner a pair of training shorts and a base tee. He wears the shorts for gym sessions and weekend errands without thinking about it. The fabric wicks sweat properly, which sounds basic but isn't guaranteed at this price point. <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-product" target="_blank" rel="noopener">LSKD</a> also publishes fabric and fit guides on the site, which helped us both order the right sizes without the usual exchange hassle.</p>
+      <p>What I appreciate about the brand philosophy — "1% better every day" — is that it shows up in product details, not just slogans. Seams that don't chafe on long runs. Pockets that actually hold a phone without bouncing. Hoodies warm enough for a post-workout walk home. These are small things, but they're the difference between activewear you tolerate and activewear you reach for.</p>
+      <div class="clearfix">
+        <p>The site ships internationally with localised pricing for Australia, the US, UK, and other regions. Browse by activity if you're unsure where to start — Training for gym days, Running for cardio, All Day Active for pieces you'll live in outside workouts. The <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-standard" target="_blank" rel="noopener">LSKD</a> leggings guide alone saved me from ordering the wrong rise.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/lskd-activewear.jpg" alt="Fitness woman in stylish gym and street activewear" width="400" height="300" loading="lazy">
+          <figcaption>Functional fitness clothing that transitions from studio to street.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/lskd-street.jpg" alt="Athleisure outfit worn outside the gym" width="400" height="300" loading="lazy">
+          <figcaption>All Day Active pieces that work beyond the workout.</figcaption>
+        </figure>
+      </figure>
+      <h2>What I'd Tell a Friend</h2>
+      <p>Start with one bottom and one top from the activity you do most. Don't buy a full wardrobe on day one. <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-product" target="_blank" rel="noopener">LSKD</a> quality is consistent enough that one good set will tell you everything you need to know. Check the bundle offers if you're building a capsule — the 2-for deals on tees and shorts are genuinely useful.</p>
+      <h2>Would I Buy Again?</h2>
+      <p>Already have. I've added running shorts, a zip hoodie, and a second pair of leggings to my rotation. <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" class="link-standard" target="_blank" rel="noopener">LSKD</a> solved the problem I didn't know how to articulate: I wanted functional fitness clothing that didn't announce "I just left the gym" every time I walked into a coffee shop.</p>
+      <div class="callout-platform">
+        <strong>Sizing tip:</strong> Use the fit guides on <a href="https://www.linkbux.com/track/afb2m1iuK_bUbugUtpF0f0NbOPEM17y6ocbZHNnBekZZTWS0qF5Fxq1kVuFw0vI3e?url=https%3A%2F%2Fwww.lskd.co%2F" target="_blank" rel="noopener">LSKD</a> for leggings and sports bras — support level and rise height matter more than the size label. Returns are straightforward if something doesn't fit.
+      </div>`,
+    17: `
+      <p>I wore the same brand of daily contact lenses for six years because my high-street optician made switching feel complicated. Reorder in person, wait for a callback, collect from the desk — it was never terrible, just inconvenient enough that I kept putting off price comparisons. A colleague who works in healthcare mentioned <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-product" target="_blank" rel="noopener">Feel Good Contacts</a>, and I was sceptical that an online supplier could match the guidance I got in a physical store.</p>
+      <p><a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-standard" target="_blank" rel="noopener">Feel Good Contacts</a> is a UK-based online retailer for contact lenses, prescription glasses, and eye care products — staffed by qualified optometrists who verify prescriptions before dispatch. That last detail mattered to me. I didn't want a warehouse shipping lenses from an unverified script. The site checks your prescription against your optician's records, and their team is available for advice if you're unsure about lens type, wearing schedule, or switching brands.</p>
+      <figure class="figure-float">
+        <img src="images/feelgood-optometrist.jpg" alt="Optometrist providing professional eye care advice" width="400" height="300" loading="lazy">
+        <figcaption>Qualified optometrists — not just a checkout page with no support.</figcaption>
+      </figure>
+      <p>My first order was straightforward. I entered my prescription details, selected my usual daily disposables, and the verification process took a day. An optometrist confirmed everything matched my records before the lenses shipped. The price was noticeably lower than my local optician — roughly 30% less on a three-month supply — without any compromise on brand or expiry dates.</p>
+      <div class="sponsor-widget">
+        <span class="sponsor-label">Partner</span>
+        <div class="sponsor-logo">FGC</div>
+        <div class="sponsor-text">
+          <p>Feel Good Contacts offers next-day delivery on many lens brands — useful when you realise you're down to your last pair.</p>
+        </div>
+        <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="btn btn-primary" target="_blank" rel="noopener">Shop Feel Good Contacts →</a>
+      </div>
+      <p>What sets <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-product" target="_blank" rel="noopener">Feel Good Contacts</a> apart from generic online pharmacies is the optometrist-led advice. I had questions about switching from monthly to daily lenses — specifically whether my prescription needed adjusting. I used the live chat and got a clear, practical answer within minutes. No upselling. No vague "consult your doctor" deflection. Actual guidance from someone qualified to give it.</p>
+      <p>The site also stocks prescription glasses and sunglasses, which I didn't expect to browse but ended up exploring. Virtual try-on tools, frame size guides, and the same optometrist verification on prescriptions. If you wear both contacts and glasses, having one supplier with consistent professional oversight is genuinely convenient.</p>
+      <div class="clearfix">
+        <p>Subscription reordering is available for contact lenses — set your frequency, get a reminder before you run out, and skip or adjust anytime. I set mine to every 90 days and haven't thought about running out since. The <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-standard" target="_blank" rel="noopener">Feel Good Contacts</a> app makes tracking orders and updating prescriptions easy from a phone.</p>
+      </div>
+      <figure class="figure-grid">
+        <figure>
+          <img src="images/feelgood-lenses.jpg" alt="Contact lens case and eye care essentials" width="400" height="300" loading="lazy">
+          <figcaption>Daily, monthly, and toric lenses — all prescription-verified.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/feelgood-contacts.jpg" alt="Prescription glasses and eye health products" width="400" height="300" loading="lazy">
+          <figcaption>Contact lenses, glasses, and eye care under one roof.</figcaption>
+        </figure>
+      </figure>
+      <h2>What I'd Tell a Friend</h2>
+      <p>Don't assume online means unsupported. If your prescription is current and your optician's details are on file, switching to <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-product" target="_blank" rel="noopener">Feel Good Contacts</a> takes about ten minutes. Compare prices on your current brand first — the savings are usually significant. And use the optometrist chat if you're considering any change to lens type or wearing schedule.</p>
+      <h2>Would I Reorder?</h2>
+      <p>I'm on my fourth order now. Same lenses, same quality, lower cost, and I still have access to qualified optometrists when I need advice. For something as personal as eye care, that combination is exactly what I wanted from an online supplier. <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-standard" target="_blank" rel="noopener">Feel Good Contacts</a> earned my trust by treating prescriptions seriously — not as a formality.</p>
+      <div class="callout-platform">
+        <strong>Prescription note:</strong> You'll need a valid, in-date prescription to order from <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" target="_blank" rel="noopener">Feel Good Contacts</a>. If yours has expired, book an eye test first — the site won't dispatch without verified details, and that's a feature, not a bug.
       </div>`
   };
 
