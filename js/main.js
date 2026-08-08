@@ -58,6 +58,16 @@ function getPostIdFromUrl() {
 /** @type {Array<Object>} Article metadata (newest → oldest) */
 const ARTICLES = [
   {
+    id: 17,
+    date: '2026-08-04',
+    category: 'product-recs',
+    categoryLabel: 'Product Recs',
+    title: 'Feel Good Contacts: Expert Advice from Qualified Optometrists',
+    image: IMG.feelGoodContacts,
+    excerpt: 'I put off switching contact lens suppliers for two years because I assumed online meant no real guidance. Feel Good Contacts changed that — qualified optometrists on hand, prescriptions verified properly, and prices that beat my high-street optician.',
+    slug: 'feel-good-contacts-optometrist-advice'
+  },
+  {
     id: 16,
     date: '2026-07-29',
     category: 'fashion',
@@ -86,16 +96,6 @@ const ARTICLES = [
     image: IMG.vekHome,
     excerpt: 'I spent a weekend comparing prices on everything from a new kettle to a washing machine, and 21vek BY kept surfacing with deals I hadn\'t found elsewhere. The site isn\'t flashy, but the selection and delivery options made furnishing my apartment feel less overwhelming.',
     slug: 'shop-smart-21vek-by'
-  },
-  {
-    id: 17,
-    date: '2026-07-04',
-    category: 'product-recs',
-    categoryLabel: 'Product Recs',
-    title: 'Feel Good Contacts: Expert Advice from Qualified Optometrists',
-    image: IMG.feelGoodContacts,
-    excerpt: 'I put off switching contact lens suppliers for two years because I assumed online meant no real guidance. Feel Good Contacts changed that — qualified optometrists on hand, prescriptions verified properly, and prices that beat my high-street optician.',
-    slug: 'feel-good-contacts-optometrist-advice'
   },
   {
     id: 12,
