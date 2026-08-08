@@ -1144,8 +1144,8 @@ function getArticleBody(id) {
       <p>I wore the same brand of daily contact lenses for six years because my high-street optician made switching feel complicated. Reorder in person, wait for a callback, collect from the desk — it was never terrible, just inconvenient enough that I kept putting off price comparisons. A colleague who works in healthcare mentioned <a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-product" target="_blank" rel="noopener">Feel Good Contacts</a>, and I was sceptical that an online supplier could match the guidance I got in a physical store.</p>
       <p><a href="https://www.linkbux.com/track/baccLGTfVYJl75_bf_aF0DCuD9_bgbkgCnprtEjpB5G0CyWtrp3jC_beBL5B5NMt1AI_bx1Gj6pzdJQ_bWUApv?url=https%3A%2F%2Fwww.feelgoodcontacts.com%2F" class="link-standard" target="_blank" rel="noopener">Feel Good Contacts</a> is a UK-based online retailer for contact lenses, prescription glasses, and eye care products — staffed by qualified optometrists who verify prescriptions before dispatch. That last detail mattered to me. I didn't want a warehouse shipping lenses from an unverified script. The site checks your prescription against your optician's records, and their team is available for advice if you're unsure about lens type, wearing schedule, or switching brands.</p>
       <figure class="figure-float">
-        <img src="images/feelgood-optometrist.jpg" alt="Optometrist providing professional eye care advice" width="400" height="300" loading="lazy">
-        <figcaption>Qualified optometrists — not just a checkout page with no support.</figcaption>
+        <img src="images/feelgood-optometrist.jpg" alt="Qualified optometrist performing an eye exam with a phoropter" width="400" height="300" loading="lazy">
+        <figcaption>Expert advice from qualified optometrists — prescription checks before every order.</figcaption>
       </figure>
       <p>My first order was straightforward. I entered my prescription details, selected my usual daily disposables, and the verification process took a day. An optometrist confirmed everything matched my records before the lenses shipped. The price was noticeably lower than my local optician — roughly 30% less on a three-month supply — without any compromise on brand or expiry dates.</p>
       <div class="sponsor-widget">
@@ -1163,12 +1163,12 @@ function getArticleBody(id) {
       </div>
       <figure class="figure-grid">
         <figure>
-          <img src="images/feelgood-lenses.jpg" alt="Contact lens case and eye care essentials" width="400" height="300" loading="lazy">
-          <figcaption>Daily, monthly, and toric lenses — all prescription-verified.</figcaption>
+          <img src="images/feelgood-lenses.jpg" alt="Daily contact lens blister packs, lens case and solution" width="400" height="300" loading="lazy">
+          <figcaption>Daily disposables, lens cases, and care essentials — all prescription-verified.</figcaption>
         </figure>
         <figure>
-          <img src="images/feelgood-contacts.jpg" alt="Prescription glasses and eye health products" width="400" height="300" loading="lazy">
-          <figcaption>Contact lenses, glasses, and eye care under one roof.</figcaption>
+          <img src="images/feelgood-contacts.jpg" alt="Prescription eyeglasses and contact lens boxes" width="400" height="300" loading="lazy">
+          <figcaption>Contact lenses and prescription glasses from one trusted supplier.</figcaption>
         </figure>
       </figure>
       <h2>What I'd Tell a Friend</h2>
