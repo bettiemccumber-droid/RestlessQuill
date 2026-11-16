@@ -662,6 +662,29 @@ function renderPostDetail() {
   const container = document.getElementById('post-content');
   if (!container) return;
 
+  const publishedSlug = new URLSearchParams(window.location.search).get('slug');
+  if (publishedSlug) {
+    fetch(`/api/posts/${encodeURIComponent(publishedSlug)}`, { cache: 'no-store' })
+      .then((response) => (response.ok ? response.json() : null))
+      .then(async (body) => {
+        if (!body || typeof body.bodyHtml !== 'string') return;
+        const listResponse = await fetch('/api/posts', { cache: 'no-store' });
+        const posts = listResponse.ok ? await listResponse.json() : [];
+        const meta = Array.isArray(posts) ? posts.find((item) => item.slug === publishedSlug) : null;
+        document.title = `${meta?.title || 'Article'} — RestlessQuil`;
+        const headerEl = document.getElementById('post-header-content');
+        if (headerEl) headerEl.innerHTML = `<h1>${meta?.title || ''}</h1><p>${meta?.excerpt || ''}</p>`;
+        container.innerHTML = body.bodyHtml;
+        const hero = document.getElementById('post-hero-img');
+        if (hero && meta?.image) {
+          hero.src = meta.image;
+          hero.alt = meta.title || '';
+        }
+      })
+      .catch(() => {});
+    return;
+  }
+
   const id = getPostIdFromUrl();
   const article = ARTICLES.find((a) => a.id === id) || ARTICLES[0];
   const index = ARTICLES.findIndex((a) => a.id === article.id);
